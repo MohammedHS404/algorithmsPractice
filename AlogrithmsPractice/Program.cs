@@ -1,4 +1,4 @@
-﻿Solution solution = new();
+Solution solution = new();
 
 int[] arr = {  };
 
