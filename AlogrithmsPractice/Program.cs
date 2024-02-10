@@ -1,8 +1,8 @@
 ﻿Solution solution = new();
 
-int[] arr = { 1, 2 };
+int[] arr = {  };
 
-int pos = 0;
+int pos = -1;
 
 ListNode prev = null;
 
@@ -48,21 +48,34 @@ public class Solution
 {
     public bool HasCycle(ListNode head)
     {
-        ListNode? current = head;
-
-        HashSet<ListNode?> visited = new();
-
-        while (current != null && !visited.Contains(current))
+        if (head == null)
         {
-            visited.Add(current);
-            current = current.next;
+            return false;
         }
-
-        if (visited.Contains(current))
+        
+        ListNode slow = head;
+        
+        ListNode? fast = head;
+        
+        while (true)
         {
-            return true;
-        }
+            slow = slow.next;
+            fast = fast.next?.next;
+            
+            if (fast == null)
+            {
+                return false;
+            }
 
-        return false;
+            if (fast.next == null)
+            {
+                return false;
+            }
+
+            if (fast == slow)
+            {
+                return true;
+            }
+        }
     }
 }

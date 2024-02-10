@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlogrithmsPractice")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a5acc81d483bc7cd5f15e708c429e5ec68f599d")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlogrithmsPractice")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlogrithmsPractice")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
