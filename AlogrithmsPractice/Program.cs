@@ -1,5 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿public class Solution
+{
+    public bool ContainsDuplicate(int[] nums)
+    {
+        HashSet<int> set = new HashSet<int>(nums.Length);
+        foreach (int num in nums)
+        {
+            if (!set.Add(num))
+            {
+                return true;
+            }
+        }
 
-using System;
-
-Console.WriteLine("Hello, World!");
+        return false;
+    }
+}
