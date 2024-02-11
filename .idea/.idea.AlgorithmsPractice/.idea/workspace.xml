@@ -7,8 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0924e26-4e30-4582-984b-6f57cf80d606" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c0924e26-4e30-4582-984b-6f57cf80d606" name="Changes" comment="solution">
       <change beforePath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +18,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Projects/AlgorithmsPractice/AlogrithmsPractice/Program.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2c9iLhzV1jxcLfrZwE5nWJwb95e" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -75,14 +78,26 @@
       <option name="presentableId" value="Default" />
       <updated>1707530140207</updated>
       <workItem from="1707530141586" duration="1406000" />
-      <workItem from="1707686593460" duration="337000" />
+      <workItem from="1707686593460" duration="1003000" />
     </task>
+    <task id="LOCAL-00001" summary="solution">
+      <option name="closed" value="true" />
+      <created>1707686960856</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707686960856</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="solution" />
   </component>
 </project>

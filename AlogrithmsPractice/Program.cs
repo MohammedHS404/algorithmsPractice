@@ -18,7 +18,7 @@ public class Solution {
             {
                 return new int[] { value, i };
             }
-            numsSet.Add(nums[i],i);
+            numsSet.TryAdd(nums[i],i);
         }
         
         return new int[] { } ;
