@@ -1,5 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using AlogrithmsPractice;
 
-using System;
+int?[] array = { 3, 9, 20, null, null, 15, 7 };
 
-Console.WriteLine("Hello, World!");
+BinaryTree binaryTree = new BinaryTree();
+
+TreeNode? root = binaryTree.CreateBinaryTreeFromArray(array);
+
