@@ -1,8 +1,6 @@
-﻿using AlogrithmsPractice;
+﻿int?[] array = { 3, 9, 20, null, null, 15, 7 };
 
-int?[] array = { 3, 9, 20, null, null, 15, 7 };
+BinaryTreeFromArray binaryTree = new BinaryTreeFromArray();
 
-BinaryTree binaryTree = new BinaryTree();
-
-TreeNode? root = binaryTree.CreateBinaryTreeFromArray(array);
+TreeNode? root = binaryTree.ArrayToTree(array);
 

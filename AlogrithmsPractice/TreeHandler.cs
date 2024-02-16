@@ -1,18 +1,10 @@
-namespace AlogrithmsPractice;
-
-using System;
-using System.Collections.Generic;
-
 public class TreeNode
 {
     public int val;
-    public TreeNode? left;
-    public TreeNode? right;
-    public TreeNode(int val = 0)
-    {
-        this.val = val;
-    }
-    public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
+    public TreeNode left;
+    public TreeNode right;
+
+    public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
     {
         this.val = val;
         this.left = left;
@@ -20,35 +12,41 @@ public class TreeNode
     }
 }
 
-public class BinaryTree
+public class BinaryTreeFromArray
 {
-    public TreeNode? CreateBinaryTreeFromArray(int?[] array)
+    public TreeNode ArrayToTree(int?[]? arr)
     {
-        return CreateBinaryTreeFromArrayHelper(array, 0);
-    }
+        if (arr == null || arr.Length == 0)
+            return null;
 
-    private TreeNode? CreateBinaryTreeFromArrayHelper(int?[] array, int index)
-    {
-        TreeNode? root = null;
+        Queue<TreeNode> queue = new Queue<TreeNode>();
 
-        if (index < array.Length && array[index] != null)
+
+        TreeNode root = arr[0] == null ? null : new TreeNode(arr[0].Value);
+        queue.Enqueue(root);
+        int i = 1;
+
+        while (queue.Count > 0)
         {
-            root = new TreeNode((int)array[index]);
-            root.left = CreateBinaryTreeFromArrayHelper(array, 2 * index + 1);
-            root.right = CreateBinaryTreeFromArrayHelper(array, 2 * index + 2);
+            TreeNode current = queue.Dequeue();
+
+            if (i < arr.Length && arr[i] != null)
+            {
+                current.left = new TreeNode(arr[i].Value);
+                queue.Enqueue(current.left);
+            }
+
+            i++;
+
+            if (i < arr.Length && arr[i] != null)
+            {
+                current.right = new TreeNode(arr[i].Value);
+                queue.Enqueue(current.right);
+            }
+
+            i++;
         }
 
         return root;
-    }
-    
-    
-    public static void InOrderTraversal(TreeNode? root)
-    {
-        if (root != null)
-        {
-            InOrderTraversal(root.left);
-            Console.Write(root.val + " ");
-            InOrderTraversal(root.right);
-        }
     }
 }
