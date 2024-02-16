@@ -1,5 +1,22 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿class Solution
+{
+    public int MaxProduct(int[] nums)
+    {
+        int res = nums.Max();
+        
+        int curMin = 1, curMax = 1;
 
-using System;
+        foreach (int n in nums)
+        {
+            int tmp = curMax;
+            
+            curMax = Math.Max(n * curMax, Math.Max(n * curMin, n));
+            
+            curMin = Math.Min(tmp * n, Math.Min(curMin * n, n));
 
-Console.WriteLine("Hello, World!");
+            res = Math.Max(res, curMax);
+        }
+
+        return res;
+    }
+}
