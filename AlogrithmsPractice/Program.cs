@@ -20,33 +20,32 @@ public class Solution
             return 0;
         }
 
-        Stack<(TreeNode,int)> nextNodes = new Stack<(TreeNode,int)>();
+        List<TreeNode> nodes = new();
 
-        nextNodes.Push((root,1));
-
+        nodes.Add(root);
+        
         int maxDepth = 0;
         
-
-        while (nextNodes.Count > 0)
+        while (nodes.Count > 0)
         {
-            (TreeNode currentNode,int depth)  = nextNodes.Pop();
+            List<TreeNode> newNodes = new();
             
-            Console.WriteLine(currentNode.val);
-
-            if (currentNode.right != null)
+            foreach (TreeNode node in nodes)
             {
-                nextNodes.Push((currentNode.right,depth+1));
+                if (node.left != null)
+                {
+                    newNodes.Add(node.left);
+                }
+
+                if (node.right != null)
+                {
+                    newNodes.Add(node.right);
+                }
             }
 
-            if (currentNode.left != null)
-            {
-                nextNodes.Push((currentNode.left,depth+1));
-            }
+            nodes = newNodes;
 
-            if (currentNode.left == null && currentNode.right == null)
-            {
-                maxDepth = Math.Max(depth, maxDepth);
-            }
+            maxDepth++;
         }
 
         return maxDepth;
