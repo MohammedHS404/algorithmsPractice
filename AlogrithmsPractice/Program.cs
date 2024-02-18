@@ -7,13 +7,17 @@
             return false;
         }
 
-        foreach (char c in s)
+        int[] countOfEachLetter = new int[26];
+        
+        for (int i = 0; i < s.Length; i++)
         {
-            if (t.Contains(c))
-            {
-                t = t.Remove(t.IndexOf(c), 1);
-            }
-            else
+            countOfEachLetter[s[i] - 'a']++;
+            countOfEachLetter[t[i] - 'a']--;
+        }
+        
+        foreach (var count in countOfEachLetter)
+        {
+            if (count != 0)
             {
                 return false;
             }
