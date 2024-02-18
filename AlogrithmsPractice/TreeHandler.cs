@@ -50,3 +50,28 @@ public class BinaryTreeFromArray
         return root;
     }
 }
+
+public class BinaryTreeToArray
+{
+    public static int[] ConvertToArray(TreeNode root)
+    {
+        if (root == null)
+            return new int[0];
+
+        List<int> list = new List<int>();
+        Queue<TreeNode> queue = new Queue<TreeNode>();
+        queue.Enqueue(root);
+
+        while (queue.Count > 0)
+        {
+            TreeNode node = queue.Dequeue();
+            list.Add(node.val);
+            if (node.left != null)
+                queue.Enqueue(node.left);
+            if (node.right != null)
+                queue.Enqueue(node.right);
+        }
+
+        return list.ToArray();
+    }
+}
