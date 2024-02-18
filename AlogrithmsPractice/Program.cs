@@ -1,6 +1,6 @@
-﻿int?[] array = { 3, 9, 20, null, null, 15, 7 };
-
-BinaryTreeFromArray binaryTree = new BinaryTreeFromArray();
-
-TreeNode? root = binaryTree.ArrayToTree(array);
-
+﻿
+public class Solution {
+    public bool IsAnagram(string s, string t) {
+        return s.Order().SequenceEqual(t.Order());
+    }
+}
