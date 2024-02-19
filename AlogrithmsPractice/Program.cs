@@ -1,6 +1,16 @@
-﻿int?[] array = { 3, 9, 20, null, null, 15, 7 };
+﻿public class Solution {
+    public int[] TopKFrequent(int[] nums, int k)
+    {
+        Dictionary<int, int> numsCount = new Dictionary<int, int>();
+        
+        foreach (int num in nums)
+        {
+            if (!numsCount.TryAdd(num,1))
+            {
+                numsCount[num]++;
+            }
+        }
 
-BinaryTreeFromArray binaryTree = new BinaryTreeFromArray();
-
-TreeNode? root = binaryTree.ArrayToTree(array);
-
+        return numsCount.OrderByDescending(x => x.Value).Take(k).Select(x => x.Key).ToArray();
+    }
+}
