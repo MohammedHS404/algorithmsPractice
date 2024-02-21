@@ -1,91 +1,61 @@
-﻿char[][] input = new char[][]
-{
-    new char[] { '5', '3', '.', '.', '7', '.', '.', '.', '.' }, 
-    new char[] { '6', '.', '.', '1', '9', '5', '.', '.', '.' },
-    new char[] { '.', '9', '8', '.', '.', '.', '.', '6', '.' },
-    new char[] { '8', '.', '.', '.', '6', '.', '.', '.', '3' },
-    new char[] { '4', '.', '.', '8', '.', '3', '.', '.', '1' },
-    new char[] { '7', '.', '.', '.', '2', '.', '.', '.', '6' },
-    new char[] { '.', '6', '.', '.', '.', '.', '2', '8', '.' },
-    new char[] { '.', '.', '.', '4', '1', '9', '.', '.', '5' },
-    new char[] { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
-};
+﻿using Newtonsoft.Json;
 
+string jsonString = "[[\".\",\"4\",\".\",\".\",\".\",\".\",\".\",\".\",\".\"],[\".\",\".\",\"4\",\".\",\".\",\".\",\".\",\".\",\".\"],[\".\",\".\",\".\",\"1\",\".\",\".\",\"7\",\".\",\".\"],[\".\",\".\",\".\",\".\",\".\",\".\",\".\",\".\",\".\"],[\".\",\".\",\".\",\"3\",\".\",\".\",\".\",\"6\",\".\"],[\".\",\".\",\".\",\".\",\".\",\"6\",\".\",\"9\",\".\"],[\".\",\".\",\".\",\".\",\"1\",\".\",\".\",\".\",\".\"],[\".\",\".\",\".\",\".\",\".\",\".\",\"2\",\".\",\".\"],[\".\",\".\",\".\",\"8\",\".\",\".\",\".\",\".\",\".\"]]";
+char[][] input = JsonConvert.DeserializeObject<char[][]>(jsonString);
 Solution solution = new Solution();
 
 bool result = solution.IsValidSudoku(input);
 
 Console.WriteLine(result);
 
-public class Solution {
+public class Solution
+{
     public bool IsValidSudoku(char[][] board)
     {
-        Dictionary<int,HashSet<char>> columnSet = new Dictionary<int, HashSet<char>>();
-        
+        Dictionary<int, HashSet<char>> columnSet = new Dictionary<int, HashSet<char>>();
+        Dictionary<int, HashSet<char>> rowSet = new Dictionary<int, HashSet<char>>();
+        Dictionary<string, HashSet<char>> subGridSet = new Dictionary<string, HashSet<char>>();
+
+        for (int i = 0; i < board.Length; i++)
+        {
+            rowSet.Add(i, new HashSet<char>());
+            columnSet.Add(i, new HashSet<char>());
+        }
+
         for (int rowIndex = 0; rowIndex < board.Length; rowIndex++)
         {
-            HashSet<char> rowSet = new HashSet<char>();
-            
             for (int columnIndex = 0; columnIndex < board[rowIndex].Length; columnIndex++)
             {
-                if(rowSet.Contains(board[rowIndex][columnIndex]))
+                char currentChar = board[rowIndex][columnIndex];
+
+                if (currentChar == '.')
+                {
+                    continue;
+                }
+
+                if (rowSet[rowIndex].Contains(currentChar) || columnSet[columnIndex].Contains(currentChar))
                 {
                     return false;
                 }
-                
-                if (board[rowIndex][columnIndex] != '.')
+
+                rowSet[rowIndex].Add(currentChar);
+
+                columnSet[columnIndex].Add(currentChar);
+
+                string key = Math.Floor(rowIndex/3f) + "," + Math.Floor(columnIndex/3f);
+
+                if (!subGridSet.TryAdd(key, new HashSet<char>()))
                 {
-                    rowSet.Add(board[rowIndex][columnIndex]);
-                }
-                
-                if(columnSet.ContainsKey(columnIndex))
-                {
-                    if (columnSet[columnIndex].Contains(board[rowIndex][columnIndex]))
+                    if (subGridSet[key].Contains(currentChar))
                     {
                         return false;
                     }
-                    if (board[rowIndex][columnIndex] != '.')
-                    {
-                        columnSet[columnIndex].Add(board[rowIndex][columnIndex]);
-                    }
-                }
-                else
-                {
-                    columnSet.Add(columnIndex, new HashSet<char>());
-                    
-                    if (board[rowIndex][columnIndex] != '.')
-                    {
-                        columnSet[columnIndex].Add(board[rowIndex][columnIndex]);
-                    }
-                }
-            }
-            Console.WriteLine();
-        }
-        
-        for (int rowIndex = 0; rowIndex < board.Length; rowIndex+=3)
-        {
-            for (int columnIndex = 0; columnIndex < board[rowIndex].Length; columnIndex+=3)
-            {
-                HashSet<char> squareSet = new HashSet<char>();
-                
-                for(int i=rowIndex; i<rowIndex+3; i++)
-                {
-                    for(int j=columnIndex; j<columnIndex+3; j++)
-                    {
-                        if(squareSet.Contains(board[i][j]))
-                        {
-                            return false;
-                        }
 
-                        if (board[i][j] != '.')
-                        {
-                            squareSet.Add(board[i][j]);
-                        }
-                    }
+                    subGridSet[key].Add(currentChar);
                 }
             }
         }
-        
+
         return true;
     }
 }
