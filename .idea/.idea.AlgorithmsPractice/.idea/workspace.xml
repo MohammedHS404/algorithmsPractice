@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0924e26-4e30-4582-984b-6f57cf80d606" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,29 +101,55 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/AlogrithmsPractice/Program.cs</url>
-          <line>46</line>
+          <line>51</line>
           <properties documentPath="D:\Projects\AlgorithmsPractice\AlogrithmsPractice\Program.cs" initialLine="34" containingFunctionPresentation="Method 'TopKFrequent'">
             <startOffsets>
-              <option value="1170" />
+              <option value="1280" />
             </startOffsets>
             <endOffsets>
-              <option value="1194" />
+              <option value="1304" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/AlogrithmsPractice/Program.cs</url>
-          <line>33</line>
+          <line>38</line>
           <properties documentPath="D:\Projects\AlgorithmsPractice\AlogrithmsPractice\Program.cs" initialLine="33" containingFunctionPresentation="Method 'TopKFrequent'">
             <startOffsets>
-              <option value="880" />
+              <option value="992" />
             </startOffsets>
             <endOffsets>
-              <option value="915" />
+              <option value="1025" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AlogrithmsPractice/Program.cs</url>
+          <line>28</line>
+          <properties documentPath="D:\Projects\AlgorithmsPractice\AlogrithmsPractice\Program.cs" initialLine="31" containingFunctionPresentation="Method 'TopKFrequent'">
+            <startOffsets>
+              <option value="737" />
+            </startOffsets>
+            <endOffsets>
+              <option value="771" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AlogrithmsPractice/Program.cs</url>
+          <line>19</line>
+          <properties documentPath="D:\Projects\AlgorithmsPractice\AlogrithmsPractice\Program.cs" initialLine="22" containingFunctionPresentation="Method 'TopKFrequent'">
+            <startOffsets>
+              <option value="549" />
+            </startOffsets>
+            <endOffsets>
+              <option value="550" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
