@@ -1,6 +1,40 @@
-﻿int?[] array = { 3, 9, 20, null, null, 15, 7 };
+﻿int[] array = { 100, 4, 200, 1, 3, 2 };
 
-BinaryTreeFromArray binaryTree = new BinaryTreeFromArray();
+Solution sol = new Solution();
 
-TreeNode? root = binaryTree.ArrayToTree(array);
+Console.WriteLine(sol.LongestConsecutive(array));
 
+public class Solution
+{
+    public int LongestConsecutive(int[] nums)
+    {
+        int longestStreak = 0;
+
+        HashSet<int> numSet = new HashSet<int>();
+
+        foreach (int num in nums)
+            numSet.Add(num);
+
+        foreach (int num in numSet)
+        {
+            int longest = 0;
+
+            if (numSet.Contains(num - 1))
+            {
+                longest = 0;
+            }
+
+            int nextNum = num;
+            
+            while (numSet.Contains(nextNum))
+            {
+                longest++;
+                nextNum++;
+            }
+            
+            longestStreak = Math.Max(longestStreak, longest);
+        }
+        
+        return longestStreak;
+    }
+}
