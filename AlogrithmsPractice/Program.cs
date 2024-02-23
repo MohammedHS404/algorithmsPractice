@@ -1,64 +1,74 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-// you can also use other imports, for example:
-// using System.Collections.Generic;
-
-// you can write to stdout for debugging purposes, e.g.
-// Console.WriteLine("this is a debug message");
+int[] a = { 3, 4, 6 };
+int[] b = { 6, 5, 4 };
 
 Solution solution = new();
 
-Tree t = new(1, new(2, new(5, new(3, null, null), null), new(9, null, null)), new(7, new(4, null, null), null));
-
-Console.WriteLine(solution.solution(t));
-
-class Tree
-{
-    public int x;
-    public Tree? l;
-    public Tree? r;
-
-    public Tree(int x, Tree l, Tree r)
-    {
-        this.x = x;
-        this.l = l;
-        this.r = r;
-    }
-};
+Console.WriteLine(solution.solution(a, b));
 
 class Solution
 {
-    public int solution(Tree T)
+    public int solution(int[] A, int[] B)
     {
-        HashSet<string> threeDigitNumbers = new HashSet<string>();
-        
-        solutionRec(T, "", threeDigitNumbers);
-        
-        return threeDigitNumbers.Count;
-    }
+        int minSum = 0;
 
-    void solutionRec(Tree T, string previous, HashSet<string> threeDigitNumbers)
-    {
-        string current = previous + T.x;
-        
-        if (previous.Length >= 2)
+        Dictionary<int, int> elementToSum = new Dictionary<int, int>();
+
+        Dictionary<int, int> sumAMemory = new Dictionary<int, int>();
+        Dictionary<int, int> sumBMemory = new Dictionary<int, int>();
+
+        for (int max = A.Length; max > 0; max--)
         {
-            threeDigitNumbers.Add(current);
+            int sum = 0;
+
+            int maxElement = int.MinValue;
+
+            if (sumAMemory.ContainsKey(max - 1))
+            {
+                sum += sumAMemory[max - 1];
+            }
+            else
+            {
+                for (int i = 0; i < max; i++)
+                {
+                    sum += A[i];
+                    if (A[i] > maxElement)
+                    {
+                        maxElement = A[i];
+                    }
+
+                    sumAMemory[i] = sum;
+                }
+            }
+
+            if (sumBMemory.ContainsKey(max - 1))
+            {
+                sum += sumBMemory[max - 1];
+            }
+            else
+            {
+                for (int i = max - 1; i < B.Length; i++)
+                {
+                    sum += B[i];
+
+                    if (B[i] > maxElement)
+                    {
+                        maxElement = B[i];
+                    }
+
+                    sumBMemory[i] = sum;
+                }
+            }
+
+
+            if (minSum == 0 || sum < minSum)
+            {
+                minSum = sum;
+                elementToSum[sum] = maxElement;
+            }
         }
 
-        if (T.l == null && T.r == null)
-        {
-            return;
-        }
-
-        if (T.l != null)
-        {
-            solutionRec(T.l, current, threeDigitNumbers);
-        }
-
-        if (T.r != null)
-        {
-            solutionRec(T.r, current, threeDigitNumbers);
-        }
+        return elementToSum[minSum];
     }
 }

@@ -8,10 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0924e26-4e30-4582-984b-6f57cf80d606" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AlogrithmsPractice/T2.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AlogrithmsPractice/T3.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AlogrithmsPractice/T1.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AlogrithmsPractice/T2.2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlogrithmsPractice/T3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AlogrithmsPractice/T3.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +33,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "micorosoft-test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,5 +88,24 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AlogrithmsPractice/Program.cs</url>
+          <line>12</line>
+          <properties documentPath="D:\Projects\AlgorithmsPractice\AlogrithmsPractice\Program.cs" initialLine="12" containingFunctionPresentation="Method 'solution'">
+            <startOffsets>
+              <option value="218" />
+            </startOffsets>
+            <endOffsets>
+              <option value="219" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

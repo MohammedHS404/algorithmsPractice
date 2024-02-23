@@ -1,12 +1,15 @@
-﻿// 2using System;
+﻿// // 2using System;
+// //
+// // // you can also use other imports, for example:
+// // // using System.Collections.Generic;
+// //
+// // // you can write to stdout for debugging purposes, e.g.
+// // // Console.WriteLine("this is a debug message");
+// // Solution solution = new();
+// // Console.WriteLine(solution.solution(new int[] {3,4,6}, new int[] {6,5,4}));
+// //
 //
-// // you can also use other imports, for example:
-// // using System.Collections.Generic;
-//
-// // you can write to stdout for debugging purposes, e.g.
-// // Console.WriteLine("this is a debug message");
-// Solution solution = new();
-// Console.WriteLine(solution.solution(new int[] {3,4,6}, new int[] {6,5,4}));
+// using System.Collections.Generic;
 //
 // class Solution
 // {
@@ -14,13 +17,13 @@
 //     {
 //         int minSum = 0;
 //         
-//         Dictionary<int,int> elementToSum = new();
+//         Dictionary<int,int> elementToSum = new Dictionary<int,int>();
 //         
 //         for (int max = A.Length; max >0; max--)
 //         {
 //             int sum = 0;
 //             
-//             int maxElement=Int32.MinValue;
+//             int maxElement= int.MinValue;
 //             
 //             for (int i = 0; i < max; i++)
 //             {
