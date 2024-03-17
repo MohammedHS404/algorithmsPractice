@@ -1,32 +1,45 @@
 ﻿public class Solution
 {
-    public IList<IList<int>> ThreeSum(int[] nums)
+    public IList<IList<int>> ThreeSum(int[] numbers)
     {
-        List<IList<int>> result = new List<IList<int>>();
+        Array.Sort(numbers);
 
-        if (nums.Length < 3)
-        {
-            return result;
-        }
+        IList<IList<int>> result = new List<IList<int>>();
 
-        for (int i = 0; i < nums.Length; i++)
+        for (int i = 0; i < numbers.Length - 2; i++)
         {
-            for (int j = i + 1; j < nums.Length; j++)
+            if (i > 0 && numbers[i] == numbers[i - 1])
             {
-                for (int k = j + 1; k < nums.Length; k++)
+                continue;
+            }   
+
+            int left = i + 1; 
+            int right = numbers.Length - 1;
+
+            while (left < right)
+            {
+                int sum = numbers[i] + numbers[left] + numbers[right];
+                
+                if (sum == 0)
                 {
-                    if (nums[i] + nums[j] + nums[k] == 0)
+                    result.Add(new int[]
                     {
-                        List<int> temp = new List<int>();
-                        temp.Add(nums[i]);
-                        temp.Add(nums[j]);
-                        temp.Add(nums[k]);
-                        temp.Sort();
-                        if (!result.Any(l=>l.SequenceEqual(temp)))
-                        {
-                            result.Add(temp);
-                        }
+                        numbers[i], numbers[left], numbers[right]
+                    });
+                    
+                    left++;
+                    while (left < right && numbers[left] == numbers[left - 1])
+                    {
+                        left++;
                     }
+                }
+                else if (sum > 0)
+                {
+                    right--;
+                }
+                else if (sum < 0)
+                {
+                    left++;
                 }
             }
         }
