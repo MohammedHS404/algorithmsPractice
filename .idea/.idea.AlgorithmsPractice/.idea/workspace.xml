@@ -8,6 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0924e26-4e30-4582-984b-6f57cf80d606" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AlogrithmsPractice/Program2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" afterDir="false" />
     </list>
@@ -85,6 +86,8 @@
       <workItem from="1709607747323" duration="2658000" />
       <workItem from="1709692479817" duration="442000" />
       <workItem from="1710631826564" duration="4261000" />
+      <workItem from="1713327343633" duration="3952000" />
+      <workItem from="1713460890857" duration="6440000" />
     </task>
     <servers />
   </component>
@@ -92,7 +95,50 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AlogrithmsPractice/Program.cs</url>
+          <line>65</line>
+          <properties documentPath="D:\Projects\AlgorithmsPractice\AlogrithmsPractice\Program.cs" initialLine="55" containingFunctionPresentation="Method 'Trap'">
+            <startOffsets>
+              <option value="1326" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1373" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AlogrithmsPractice/Program.cs</url>
+          <line>83</line>
+          <properties documentPath="D:\Projects\AlgorithmsPractice\AlogrithmsPractice\Program.cs" initialLine="83" containingFunctionPresentation="Method 'Trap'">
+            <startOffsets>
+              <option value="1829" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1896" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
