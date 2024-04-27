@@ -19,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="inverse-tree" />
+        <entry key="$PROJECT_DIR$" value="min-stack" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,6 +85,7 @@
       <workItem from="1709607747323" duration="2658000" />
       <workItem from="1709692479817" duration="442000" />
       <workItem from="1710631826564" duration="4261000" />
+      <workItem from="1714203022474" duration="786000" />
     </task>
     <servers />
   </component>
