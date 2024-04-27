@@ -1,47 +1,70 @@
-﻿string test = "cabababababababd";
+﻿string test = "a";
 
-Console.WriteLine(LongestPalindrome(test));
+Solution solution = new Solution();
 
-string LongestPalindrome(string s)
+Console.WriteLine(solution.LongestPalindrome(test));
+
+class Solution
 {
-    if (s.Length == 0)
-    {
-        return "";
-    }
+ 
 
-    string longest = "";
-
-    for (int i = 0; i < s.Length; i++)
+    public string LongestPalindrome(string s)
     {
-        for (int j = i + 1; j <= s.Length; j++)
+        if (s.Length == 0)
         {
-            string sub = s.Substring(i, j - i);
-            
-            if (IsPalindromic(sub) && sub.Length > longest.Length)
+            return "";
+        }
+
+        string longest = "";
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            string odd = PalindromicLength(s, i, i);
+            string even = PalindromicLength(s, i, i + 1);
+
+            if (odd.Length > longest.Length)
             {
-                longest = sub;
+                longest = odd;
+            }
+
+            if (even.Length > longest.Length)
+            {
+                longest = even;
             }
         }
+
+        return longest;
     }
-    
-    return longest;
-}
 
-bool IsPalindromic(string s)
-{
-
-    int l = 0;
-    int r = s.Length - 1;
-
-    while (l < r)
+    string PalindromicLength(string s, int l, int r)
     {
-        if (s[l] != s[r])
+        if (l > r)
         {
-            return false;
+            return "";
         }
-        l++;
-        r--;
-    }
 
-    return true;
+        if (l < 0 || r >= s.Length)
+        {
+            return "";
+        }
+    
+        string result = "";
+
+        while (l >= 0 && r < s.Length)
+        {
+            if (s[l] == s[r])
+            {
+                result = s.Substring(l, r - l + 1);
+            }
+            else
+            {
+                break;
+            }
+        
+            l--;
+            r++;
+        }
+
+        return result;
+    }   
 }
