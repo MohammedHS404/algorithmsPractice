@@ -1,7 +1,7 @@
 ﻿
 int?[] arr = new int?[]
 {
-    1, 2
+    1, 2    
 };
 
 BinaryTreeFromArray bta = new BinaryTreeFromArray();
@@ -20,23 +20,26 @@ public class Solution
         {
             return 0;
         }
-        
-        int diameter = Height(root.left) + Height(root.right);
-        
-        int leftDiameter = DiameterOfBinaryTree(root.left);
-        
-        int rightDiameter = DiameterOfBinaryTree(root.right);
-        
-        return Math.Max(diameter, Math.Max(leftDiameter, rightDiameter));
-    }
+
+
+        int res = 0;
     
-    int Height(TreeNode? node)
-    {
-        if (node == null)
+        int Height(TreeNode? node)
         {
-            return 0;
+            if (node == null)
+            {
+                return 0;
+            }
+            
+            int left = Height(node.left);
+            int right = Height(node.right);
+            res = Math.Max(res, left + right);
+        
+            return 1 + Math.Max(left, right);
         }
         
-        return 1 + Math.Max(Height(node.left), Height(node.right));
+        Height(root);
+        
+        return res;
     }
 }
