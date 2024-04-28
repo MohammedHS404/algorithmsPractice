@@ -1,6 +1,6 @@
 ﻿int?[] arr = new int?[]
 {
-    2,1,3
+    2, 1, 3
 };
 
 TreeNode root = new BinaryTreeFromArray().ArrayToTree(arr);
@@ -13,31 +13,22 @@ public class Solution
 {
     public bool IsValidBST(TreeNode? root)
     {
-        return Helper(root).Item1;
+        return Helper(root, long.MinValue, long.MaxValue);
     }
 
-    (bool, long, long) Helper(TreeNode? root)
+    bool Helper(TreeNode? root, long left, long right)
     {
         if (root == null)
         {
-            return (true, long.MinValue, long.MaxValue);
+            return true;
         }
-        
-        (bool leftValid, long leftMax, long leftMin) = Helper(root.left);
 
-        if (!leftValid || leftMax >= root.val)
+        if (root.val <= left || root.val >= right)
         {
-            return (false, 0, 0);
+            return false;
         }
 
-        (bool rightValid, long rightMax, long rightMin) = Helper(root.right);
-
-        if (!rightValid || rightMin <= root.val)
-        {
-            return (false, 0, 0);
-        }
-
-        return (true, Math.Max(rightMax, root.val), Math.Min(leftMin, root.val));
+        return Helper(root.left, left, root.val) && Helper(root.right, root.val, right);
     }
 
 }
