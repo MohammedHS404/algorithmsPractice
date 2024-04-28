@@ -1,7 +1,6 @@
-﻿
-int?[] arr = new int?[]
+﻿int?[] arr =
 {
-    1, 2    
+    1, 2
 };
 
 BinaryTreeFromArray bta = new BinaryTreeFromArray();
@@ -23,23 +22,23 @@ public class Solution
 
 
         int res = 0;
-    
+
         int Height(TreeNode? node)
         {
             if (node == null)
             {
                 return 0;
             }
-            
+
             int left = Height(node.left);
             int right = Height(node.right);
             res = Math.Max(res, left + right);
-        
+
             return 1 + Math.Max(left, right);
         }
-        
+
         Height(root);
-        
+
         return res;
     }
 }
