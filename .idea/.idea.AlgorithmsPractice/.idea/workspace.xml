@@ -8,6 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0924e26-4e30-4582-984b-6f57cf80d606" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AlogrithmsPractice/BoxWeights.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" afterDir="false" />
     </list>
@@ -94,5 +95,24 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/AlogrithmsPractice/Program.cs</url>
+          <line>41</line>
+          <properties documentPath="D:\Projects\AlgorithmsPractice\AlogrithmsPractice\Program.cs" initialLine="41" containingFunctionPresentation="Method 'numberOfItems'">
+            <startOffsets>
+              <option value="864" />
+            </startOffsets>
+            <endOffsets>
+              <option value="898" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
