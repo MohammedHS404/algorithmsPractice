@@ -8,6 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0924e26-4e30-4582-984b-6f57cf80d606" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AlogrithmsPractice/SinglyLinkedListNodeHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AlogrithmsPractice/locateLongestList.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" afterDir="false" />
     </list>
@@ -23,6 +25,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/AlogrithmsPractice/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProjectId" id="2c9iLhzV1jxcLfrZwE5nWJwb95e" />
