@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0924e26-4e30-4582-984b-6f57cf80d606" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AlgorithmsPractice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AlogrithmsPractice/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="c0924e26-4e30-4582-984b-6f57cf80d606" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +22,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2c9iLhzV1jxcLfrZwE5nWJwb95e" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -92,6 +92,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
