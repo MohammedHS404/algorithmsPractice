@@ -35,7 +35,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;daily-temperatures&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -85,6 +85,7 @@
       <workItem from="1709607747323" duration="2658000" />
       <workItem from="1709692479817" duration="442000" />
       <workItem from="1710631826564" duration="4261000" />
+      <workItem from="1714932465221" duration="2070000" />
     </task>
     <servers />
   </component>
