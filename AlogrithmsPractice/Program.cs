@@ -1,38 +1,54 @@
-﻿Console.WriteLine(IsPalindromPermutation("CATAC")); // True
+﻿Console.WriteLine(OneEditAway("pale", "ple")); // True
 
-bool IsPalindromPermutation(string input)
+Console.WriteLine(OneEditAway("pales", "pale")); // True
+
+Console.WriteLine(OneEditAway("pale", "bale")); // True
+
+Console.WriteLine(OneEditAway("pale", "bake")); // False
+
+bool OneEditAway(string s1, string s2)
 {
-    if (string.IsNullOrEmpty(input))
+    int count = 0;
+
+    if (Math.Abs(s1.Length - s2.Length) > 1)
     {
         return false;
     }
 
-    if (input.Length == 1)
+    Dictionary<char, int> s1CharCount = new Dictionary<char, int>();
+
+    for (int i = 0; i < s1.Length; i++)
     {
-        return true;
-    }
-
-    int[] charCount = new int[26];
-
-    foreach (char ch in input)
-    {
-        char chLower = char.ToLower(ch);
-
-        if (char.IsLetter(chLower))
+        if (s1CharCount.ContainsKey(s1[i]))
         {
-            charCount[chLower - 'a']++;
+            s1CharCount[s1[i]]++;
+        }
+        else
+        {
+            s1CharCount.Add(s1[i], 1);
         }
     }
 
-    int oddCount = 0;
-
-    foreach (var item in charCount)
+    for (int i = 0; i < s2.Length; i++)
     {
-        if (item % 2 != 0)
+        if (s1CharCount.ContainsKey(s2[i]))
         {
-            oddCount++;
+            s1CharCount[s2[i]]--;
+        }
+    }
+    
+    foreach (var item in s1CharCount)
+    {
+        if (item.Value != 0)
+        {
+            count++;
+            
+            if (count > 1)
+            {
+                return false;
+            }
         }
     }
 
-    return oddCount <= 1;
+    return true;
 }
