@@ -1,4 +1,4 @@
-﻿Console.WriteLine(IsPalindromPermutation("CATACC")); // True
+﻿Console.WriteLine(IsPalindromPermutation("CATAC")); // True
 
 bool IsPalindromPermutation(string input)
 {
@@ -12,7 +12,7 @@ bool IsPalindromPermutation(string input)
         return true;
     }
 
-    Dictionary<char, int> charCount = new();
+    int[] charCount = new int[26];
 
     foreach (char ch in input)
     {
@@ -20,10 +20,7 @@ bool IsPalindromPermutation(string input)
 
         if (char.IsLetter(chLower))
         {
-            if (!charCount.TryAdd(chLower, 1))
-            {
-                charCount[chLower]++;
-            }
+            charCount[chLower - 'a']++;
         }
     }
 
@@ -31,7 +28,7 @@ bool IsPalindromPermutation(string input)
 
     foreach (var item in charCount)
     {
-        if (item.Value % 2 != 0)
+        if (item % 2 != 0)
         {
             oddCount++;
         }
