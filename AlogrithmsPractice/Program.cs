@@ -2,7 +2,7 @@
 {
     new[]
     {
-        0, 2, 3, 4
+        1, 2, 3, 4
     },
     new[]
     {
@@ -14,7 +14,7 @@
     },
     new[]
     {
-        13, 14, 15, 0
+        13, 0, 15, 0
     }
 };
 
@@ -32,34 +32,30 @@ static void ZeroMatrix(int[][] matrix)
 
     for (int r = 0; r < matrix.Length; r++)
     {
-        if (rowsToSkip.Contains(r))
-        {
-            continue;
-        }
-
         for (int c = 0; c < matrix[r].Length; c++)
         {
-            if (columnsToSkip.Contains(c) || rowsToSkip.Contains(r))
-            {
-                continue;
-            }
-
             if (matrix[r][c] == 0)
             {
-
-                for (int i = 0; i < matrix.Length; i++)
-                {
-                    matrix[i][c] = 0;
-                }
-
-                for (int i = 0; i < matrix[r].Length; i++)
-                {
-                    matrix[r][i] = 0;
-                }
-
                 rowsToSkip.Add(r);
                 columnsToSkip.Add(c);
             }
+        }
+    }
+
+    foreach (var row in rowsToSkip)
+    {
+        for (int i = 0; i < matrix[row].Length; i++)
+        {
+            matrix[row][i] = 0;
+        }
+    }
+
+    foreach (var column in columnsToSkip)
+    {
+        for (int i = 0; i < matrix.Length; i++)
+        {
+            int[] t = matrix[i];
+            t[column] = 0;
         }
     }
 }
