@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "l5HIhV1og/4utX02Kqx/8McoxawsC4abNjmrc9fqpIeexfx3+aetI6Hbs0BKiFTRcSKDQfsgsr0S7tept2liSg==",
+  "dgSpecHash": "WxMb8sx0kRYWDMUUAjZl4sI7f4HnqTCGRb9zM1AwkSDoOdBF3fIF9nQUe8vO7NxXf3K1eXyfb2YgWQgnVmubhA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\AlgorithmsPractice\\AlogrithmsPractice\\AlogrithmsPractice.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mohamed.shokry\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\mohamed.shokry\\.nuget\\packages\\system.drawing.common\\8.0.8\\system.drawing.common.8.0.8.nupkg.sha512"
+  ],
   "logs": []
 }

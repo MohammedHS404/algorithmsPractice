@@ -1,4 +1,6 @@
-﻿int[][] fourXfour = new int[][]
+﻿using System.Drawing;
+
+int[][] fourXfour = new int[][]
 {
     new int[]
     {
@@ -70,14 +72,42 @@ int[][] fiveXfive= new int[][]
     }
 };
 
-int[][] r = RotateMatrix(fiveXfive);
+string imgPath = @"C:\Users\mohamed.shokry\Downloads\1646145027866.jpg";
 
-foreach (var row in r)
+var img = new Bitmap(imgPath);
+
+int width = img.Width;
+
+int height = img.Height;
+
+int[][] imgMatrix = new int[width][];
+
+for (int i = 0; i < width; i++)
 {
-    Console.WriteLine(string.Join(", ",
-        row));
+    imgMatrix[i] = new int[height];
 }
 
+for (int i = 0; i < width; i++)
+{
+    for (int j = 0; j < height; j++)
+    {
+        imgMatrix[i][j] = img.GetPixel(i, j).ToArgb();
+    }
+}
+
+int[][] rotatedImgMatrix = RotateMatrix(imgMatrix);
+
+Bitmap rotatedImg = new Bitmap(width, height);
+
+for (int i = 0; i < width; i++)
+{
+    for (int j = 0; j < height; j++)
+    {
+        rotatedImg.SetPixel(i, j, Color.FromArgb(rotatedImgMatrix[i][j]));
+    }
+}
+
+rotatedImg.Save(@"C:\Users\mohamed.shokry\Downloads\rotatedImg.jpg");
 
 int[][] RotateMatrix(int[][] matrix)
 {
