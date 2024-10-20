@@ -1,15 +1,32 @@
 ﻿using AlogrithmsPractice;
 
-Node<int> node = new Node<int>(1);
-node.Append(2);
-node.Append(3);
-node.Append(4);
+Node<int> node = Node<int>.FromArray([
+    1,1,2,3,4,4,5
+]);
 
-node.Delete(3);
+RemoveDuplicates(node);
 
-for (Node<int>? current = node; current != null; current = current.Next)
+Console.WriteLine(node.ToString());
+
+void RemoveDuplicates(Node<int> head)
 {
-    Console.Write(current.Data + " ");
-}
+    Node<int>? current = head;
+    Node<int>? prev = null;
+    HashSet<int> seen = new HashSet<int>();
 
-Console.WriteLine();
+
+    while (current != null)
+    {
+        if (prev != null && seen.Contains(current.Data))
+        {
+            prev.Next = current.Next;
+        }
+        else
+        {
+            prev = current;
+        }
+
+        seen.Add(current.Data);
+        current = current.Next;
+    }
+}
