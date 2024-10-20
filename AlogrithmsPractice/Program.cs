@@ -12,50 +12,58 @@
     {
         9, 10, 11, 12
     },
-    new[]g
+    new[]
     {
         13, 0, 15, 0
     }
 };
 
-ZeroMatrix(matrix);
+Solution s = new Solution();
+s.SetZeroes(matrix);
 
 foreach (var row in matrix)
 {
-    Console.WriteLine(string.Join(", ", row));
+    foreach (var column in row)
+    {
+        Console.Write(column + " ");
+    }
+    Console.WriteLine();
 }
 
-static void ZeroMatrix(int[][] matrix)
+public class Solution
 {
-    HashSet<int> rowsToSkip = new HashSet<int>();
-    HashSet<int> columnsToSkip = new HashSet<int>();
-
-    for (int r = 0; r < matrix.Length; r++)
+    public void SetZeroes(int[][] matrix)
     {
-        for (int c = 0; c < matrix[r].Length; c++)
+        HashSet<int> rowsToSkip = new HashSet<int>();
+        HashSet<int> columnsToSkip = new HashSet<int>();
+
+        for (int r = 0; r < matrix.Length; r++)
         {
-            if (matrix[r][c] == 0)
+            for (int c = 0; c < matrix[r].Length; c++)
             {
-                rowsToSkip.Add(r);
-                columnsToSkip.Add(c);
+                if (matrix[r][c] == 0)
+                {
+                    rowsToSkip.Add(r);
+                    columnsToSkip.Add(c);
+                }
             }
         }
-    }
 
-    foreach (var row in rowsToSkip)
-    {
-        for (int i = 0; i < matrix[row].Length; i++)
+        foreach (var row in rowsToSkip)
         {
-            matrix[row][i] = 0;
+            for (int i = 0; i < matrix[row].Length; i++)
+            {
+                matrix[row][i] = 0;
+            }
         }
-    }
 
-    foreach (var column in columnsToSkip)
-    {
-        for (int i = 0; i < matrix.Length; i++)
+        foreach (var column in columnsToSkip)
         {
-            int[] t = matrix[i];
-            t[column] = 0;
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                int[] t = matrix[i];
+                t[column] = 0;
+            }
         }
     }
 }
