@@ -1,30 +1,74 @@
+using System.Text;
+
 namespace AlogrithmsPractice;
 
-public class ListNode
+public class Node<T>
 {
-    public int val;
-    public ListNode? next;
-    public ListNode(int val = 0, ListNode? next = null)
+    public Node<T>? Next = null;
+    public readonly T Data;
+
+    public Node(T data)
     {
-        this.val = val;
-        this.next = next;
+        Data = data;
     }
-}
 
-public class ListNodeFromArray
-{
-    public ListNode ArrayToListNode(int[] arr)
+    public void Append(T data)
     {
-        if (arr.Length == 0)
-            return null;
+        Node<T> end = new Node<T>(data);
+        Node<T>? next = this;
 
-        ListNode head = new ListNode(arr[0]);
-        ListNode current = head;
-
-        for (int i = 1; i < arr.Length; i++)
+        while (next.Next != null)
         {
-            current.next = new ListNode(arr[i]);
-            current = current.next;
+            next = next.Next;
+        }
+
+        next.Next = end;
+    }
+
+    public void Delete(T data)
+    {
+        Node<T> current = this;
+
+        while (current.Next != null)
+        {
+            if (current.Next.Data != null && current.Next.Data.Equals(data))
+            {
+                current.Next = current.Next.Next;
+                return;
+            }
+
+            current = current.Next;
+        }
+    }
+
+    public override string ToString()
+    {
+        Node<T>? current = this;
+        StringBuilder sb = new StringBuilder();
+
+        while (current != null)
+        {
+            sb.Append(current.Data);
+            sb.Append(" -> ");
+            current = current.Next;
+        }
+        
+        // Remove the last " -> "
+        
+        sb.Remove(sb.Length - 4, 4);
+
+        return sb.ToString();
+    }
+    
+    public static Node<T> FromArray(T[] array)
+    {
+        Node<T> head = new Node<T>(array[0]);
+        Node<T> current = head;
+
+        for (int i = 1; i < array.Length; i++)
+        {
+            current.Next = new Node<T>(array[i]);
+            current = current.Next;
         }
 
         return head;
