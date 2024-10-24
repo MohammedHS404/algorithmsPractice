@@ -1,6 +1,6 @@
 ﻿int[] arr = new int[]
 {
-    1, 2, 3, 4, 5
+    2, 1, 5, 6, 2, 3
 };
 
 
@@ -15,33 +15,28 @@ public class Solution
     {
         int max = 0;
 
+        Stack<(int index, int height)> stack = new();
+
         for (int i = 0; i < heights.Length; i++)
         {
-            for (int j = i; j >= 0; j--)
+            int start = i;
+
+            while (stack.Count > 0 && stack.Peek().height > heights[i])
             {
-                int height = heights[j];
-
-                int sum = 0;
-                
-                for (int k = i - 1; k >= 0; k--)
-                {
-                    if (heights[k] >= height)
-                    {
-                        sum += height;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-
-
-                if (sum > max)
-                {
-                    max = sum;
-                }
+                (int index, int height) = stack.Pop();
+                max = Math.Max(max, height * (i - index));
+                start = index;
             }
+
+            stack.Push((start, heights[i]));
         }
+
+        while (stack.Count>0)
+        {
+            (int index,int height) = stack.Pop();
+            max = Math.Max(max, height * (heights.Length - index));
+        }
+        
         return max;
     }
 }
