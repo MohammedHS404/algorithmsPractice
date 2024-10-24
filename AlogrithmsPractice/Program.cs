@@ -1,34 +1,47 @@
-﻿var arr = new int[] { 2, 1, 5, 6, 2, 3 };
-int max = 0;
-var toConsider = new int[arr.Length];
-
-for (int i = 0; i < arr.Length; i++)
+﻿int[] arr = new int[]
 {
-    if (!toConsider.Contains(arr[i]))
-    {
-        toConsider[i] = arr[i];
-    }
+    1, 2, 3, 4, 5
+};
 
-    for (int j = 0; j < toConsider.Length; j++)
-    {
-        if (toConsider[j] == -1)
-        {
-            continue;
-        }
 
-        if (toConsider[j] <= arr[i])
+Solution s = new Solution();
+
+Console.WriteLine(s.LargestRectangleArea(arr));
+
+
+public class Solution
+{
+    public int LargestRectangleArea(int[] heights)
+    {
+        int max = 0;
+
+        for (int i = 0; i < heights.Length; i++)
         {
-            var newMax = toConsider[j] * (i + 1);
-            if (newMax > max)
+            for (int j = i; j >= 0; j--)
             {
-                max = newMax;
+                int height = heights[j];
+
+                int sum = 0;
+                
+                for (int k = i - 1; k >= 0; k--)
+                {
+                    if (heights[k] >= height)
+                    {
+                        sum += height;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+
+                if (sum > max)
+                {
+                    max = sum;
+                }
             }
         }
-        else
-        {
-            toConsider[j] = -1;
-        }
+        return max;
     }
 }
-
-Console.WriteLine(max);
