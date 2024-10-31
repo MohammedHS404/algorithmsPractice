@@ -14,7 +14,7 @@ public class TreeNode
 
 public class BinaryTreeFromArray
 {
-    public TreeNode ArrayToTree(int?[]? arr)
+    public TreeNode? ArrayToTree(int[] arr)
     {
         if (arr == null || arr.Length == 0)
             return null;
@@ -22,7 +22,7 @@ public class BinaryTreeFromArray
         Queue<TreeNode> queue = new Queue<TreeNode>();
 
 
-        TreeNode root = arr[0] == null ? null : new TreeNode(arr[0].Value);
+        TreeNode root = new TreeNode(arr[0]);
         queue.Enqueue(root);
         int i = 1;
 
@@ -30,17 +30,17 @@ public class BinaryTreeFromArray
         {
             TreeNode current = queue.Dequeue();
 
-            if (i < arr.Length && arr[i] != null)
+            if (i < arr.Length)
             {
-                current.left = new TreeNode(arr[i].Value);
+                current.left = new TreeNode(arr[i]);
                 queue.Enqueue(current.left);
             }
 
             i++;
 
-            if (i < arr.Length && arr[i] != null)
+            if (i < arr.Length)
             {
-                current.right = new TreeNode(arr[i].Value);
+                current.right = new TreeNode(arr[i]);
                 queue.Enqueue(current.right);
             }
 
