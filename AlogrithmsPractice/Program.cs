@@ -19,16 +19,7 @@ public class Solution
 {
     public bool SearchMatrix(int[][] matrix, int target)
     {
-        int arrayIndex = -1;
-
-        for (int i = 0; i < matrix.Length; i++)
-        {
-            if (matrix[i][0] <= target && matrix[i][matrix[i].Length - 1] >= target)
-            {
-                arrayIndex = i;
-                break;
-            }
-        }
+        int arrayIndex = MatrixBinarySearch(matrix, 0, matrix.Length - 1, target);
 
         if (arrayIndex == -1)
         {
@@ -40,6 +31,44 @@ public class Solution
         int end = nums.Length - 1;
 
         return BinarySearch(nums, start, end, target) > -1;
+    }
+
+    private int MatrixBinarySearch(int[][] matrix, int start, int end, int target)
+    {
+        if (start > end)
+        {
+            return -1;
+        }
+
+        if (matrix[start][0] <= target && matrix[start][matrix[start].Length - 1] >= target)
+        {
+            return start;
+        }
+
+        if (matrix[end][0] <= target && matrix[end][matrix[end].Length - 1] >= target)
+        {
+            return end;
+        }
+
+        if (start == end)
+        {
+            return -1;
+        }
+
+        int mid = start + (end - start) / 2;
+
+        if (matrix[mid][0] <= target && matrix[mid][matrix[mid].Length - 1] >= target)
+        {
+            return mid;
+        }
+        if (matrix[mid][0] > target)
+        {
+            return MatrixBinarySearch(matrix, start, mid - 1, target);
+        }
+        else
+        {
+            return MatrixBinarySearch(matrix, mid + 1, end, target);
+        }
     }
 
     private int BinarySearch(int[] arr, int start, int end, int target)
