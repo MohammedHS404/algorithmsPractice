@@ -22,23 +22,20 @@ public class Solution
         }
 
         int max = 0;
-        int leftIndex = 0;
-        int rightIndex = 1;
+        int min = prices[0];
 
-        while (rightIndex < prices.Length)
+        for (int i = 1; i < prices.Length; i++)
         {
-            if (prices[rightIndex] > prices[leftIndex])
+            if (prices[i] < min)
             {
-                max = Math.Max(max, prices[rightIndex] - prices[leftIndex]);
+                min = prices[i];
             }
             else
             {
-                leftIndex = rightIndex;
+                max = Math.Max(max, prices[i] - min);
             }
-
-            rightIndex++;
         }
-
+        
         return max;
     }
 }
