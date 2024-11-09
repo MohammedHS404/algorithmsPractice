@@ -11,18 +11,32 @@ public class Solution
 {
     public int MaxProfit(int[] prices)
     {
-        int max = 0;
-
-        for (int i = prices.Length - 1; i > 0; i--)
+        if (prices.Length == 0)
         {
-            for (int j = i - 1; j >= 0; j--)
+            return 0;
+        }
+
+        if (prices.Length == 1)
+        {
+            return 0;
+        }
+
+        int max = 0;
+        int leftIndex = 0;
+        int rightIndex = 1;
+
+        while (rightIndex < prices.Length)
+        {
+            if (prices[rightIndex] > prices[leftIndex])
             {
-                int profit = prices[i] - prices[j];
-                if (profit > max)
-                {
-                    max = profit;
-                }
+                max = Math.Max(max, prices[rightIndex] - prices[leftIndex]);
             }
+            else
+            {
+                leftIndex = rightIndex;
+            }
+
+            rightIndex++;
         }
 
         return max;
